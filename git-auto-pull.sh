@@ -2,7 +2,7 @@
 set -euo pipefail
 
 REPO_DIR="/websites/kendrickson/KendricksonLandingPage"
-BRANCH="main"   # change to "master" if that’s your default branch
+BRANCH="master"   # change to "master" if that’s your default branch
 INTERVAL=300    # 300 seconds = 5 minutes
 
 cd "$REPO_DIR"
