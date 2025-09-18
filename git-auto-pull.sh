@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# go to repo dir
-cd /websites/kendrickson/KendricksonLandingPage
+REPO_DIR="/websites/kendrickson/KendricksonLandingPage"
+BRANCH="main"   # change to "master" if that’s your default branch
+INTERVAL=300    # 300 seconds = 5 minutes
 
-echo "==> $(date) - pulling latest changes"
-git fetch --all --prune
-git reset --hard origin/master
+cd "$REPO_DIR"
+
+while true; do
+    echo "==> $(date) - pulling latest changes"
+    git fetch --all --prune
+    git reset --hard "origin/$BRANCH"
+    echo "Sleeping for $INTERVAL seconds..."
+    sleep "$INTERVAL"
+done
