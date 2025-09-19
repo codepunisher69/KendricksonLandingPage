@@ -21,14 +21,44 @@ export const InteractiveTeamCard = ({
 }: TeamCardProps) => {
   const [copied, setCopied] = useState(false);
 
-  const handleCopyEmail = async () => {
-    try {
-      await navigator.clipboard.writeText(email);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy email:", err);
+  const copyTextToClipboard = async (text: string) => {
+    if (navigator.clipboard && window.isSecureContext) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        // fall through to fallback
+      }
     }
+
+    const textArea = document.createElement("textarea");
+    textArea.value = text;
+    textArea.style.position = "fixed";
+    textArea.style.left = "-9999px";
+    textArea.style.top = "0";
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+
+    let success = false;
+    try {
+      success = document.execCommand("copy");
+    } catch {
+      success = false;
+    }
+
+    document.body.removeChild(textArea);
+    return success;
+  };
+
+  const handleCopyEmail = async () => {
+    const success = await copyTextToClipboard(email);
+    if (!success) {
+      return;
+    }
+
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -81,8 +111,16 @@ export const InteractiveTeamCard = ({
         {/* Email section with click-to-copy */}
         <div className="mt-5 pt-4 border-t border-border/40">
           <button
+            aria-label={`Copy ${email} to clipboard`}
             className="flex items-center gap-2 w-full text-left hover:bg-primary/5 rounded-lg p-2 -m-2 transition-colors duration-200 group/email"
             onClick={handleCopyEmail}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleCopyEmail();
+              }
+            }}
+            title="Copy email to clipboard"
           >
             <div className="h-2 w-2 rounded-full bg-primary/60 group-hover/email:bg-primary transition-colors" />
             <p className="text-sm text-primary font-medium flex-1">{email}</p>
