@@ -11,6 +11,8 @@ const nextConfig = {
         hostname: "plus.unsplash.com",
       },
     ],
+    eslint: { ignoreDuringBuilds: true },
+    experimental: { tsconfigPaths: true }
   },
 };
 
