@@ -9,7 +9,7 @@ import {
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
 import * as React from "react";
-import { NavbarMenu, NavbarMenuItem } from "@heroui/react";
+import { NavbarMenu, NavbarMenuItem } from "@heroui/navbar";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
