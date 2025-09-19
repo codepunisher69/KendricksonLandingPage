@@ -49,7 +49,8 @@ This message was sent from the Kendrickson Consulting contact form.
     }
 
     const resend = new Resend(apiKey);
-    const toAddress = process.env.CONTACT_TO_EMAIL || "tmick28@protonmail.com";
+    const toAddress =
+      process.env.CONTACT_TO_EMAIL || "kristi.kendrickson@kenedu.net";
     const fromAddress =
       process.env.CONTACT_FROM_EMAIL ||
       "Kendrickson Consulting <onboarding@resend.dev>";
