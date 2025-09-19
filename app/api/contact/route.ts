@@ -50,8 +50,10 @@ This message was sent from the Kendrickson Consulting contact form.
 
     const resend = new Resend(apiKey);
 
-    const toAddress = "tmick28@protonmail.com";
-    const fromAddress = { email };
+    const toAddress = process.env.CONTACT_TO_EMAIL || "tmick28@protonmail.com";
+    const fromAddress =
+      process.env.CONTACT_FROM_EMAIL ||
+      "Kendrickson Consulting <onboarding@resend.dev>";
 
     const subject = `New Contact Form Submission from ${name}`;
 
@@ -75,7 +77,7 @@ This message was sent from the Kendrickson Consulting contact form.
       subject,
       text: emailContent,
       html: htmlContent,
-      replyTo: [email],
+      replyTo: email,
     });
 
     if (sendError) {
