@@ -12,39 +12,40 @@ export async function POST(request: NextRequest) {
     if (!name || !email || !institution || !message) {
       return NextResponse.json(
         { error: "All fields are required" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Validate email format
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
     if (!emailRegex.test(email)) {
       return NextResponse.json(
         { error: "Please provide a valid email address" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     // Create email content
     const emailContent = `
-New Contact Form Submission
-
-Name: ${name}
-Email: ${email}
-Institution: ${institution}
-
-Message:
-${message}
-
----
-This message was sent from the Kendrickson Consulting contact form.
+          New Contact Form Submission
+          
+          Name: ${name}
+          Email: ${email}
+          Institution: ${institution}
+          
+          Message:
+          ${message}
+          
+          ---
+          This message was sent from the Kendrickson Consulting contact form.
     `.trim();
 
     const apiKey = process.env.RESEND_API_KEY;
     if (!apiKey) {
       return NextResponse.json(
         { error: "Email service not configured. Missing RESEND_API_KEY." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -53,7 +54,7 @@ This message was sent from the Kendrickson Consulting contact form.
       process.env.CONTACT_TO_EMAIL || "kristi.kendrickson@kenedu.net";
     const fromAddress =
       process.env.CONTACT_FROM_EMAIL ||
-      "Kendrickson Consulting <onboarding@resend.dev>";
+      "Kendrickson Consulting <noreply@kenedu.net>";
 
     const subject = `New Contact Form Submission from ${name}`;
 
@@ -83,15 +84,16 @@ This message was sent from the Kendrickson Consulting contact form.
     if (sendError) {
       // eslint-disable-next-line no-console
       console.error("Resend send error:", sendError);
+
       return NextResponse.json(
         { error: "Failed to send message. Please try again later." },
-        { status: 502 }
+        { status: 502 },
       );
     }
 
     return NextResponse.json(
       { message: "Message sent successfully! We'll get back to you soon." },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     // eslint-disable-next-line no-console
@@ -99,7 +101,7 @@ This message was sent from the Kendrickson Consulting contact form.
 
     return NextResponse.json(
       { error: "Failed to send message. Please try again later." },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
