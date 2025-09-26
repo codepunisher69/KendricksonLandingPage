@@ -9,6 +9,11 @@ import {
   Building,
   BarChart3,
   BookOpen,
+  Monitor,
+  GraduationCap,
+  Accessibility,
+  Server,
+  TrendingUp,
 } from "lucide-react";
 
 interface Service {
@@ -18,6 +23,7 @@ interface Service {
   icon: string;
   detailedInfo: string;
   benefits: string[];
+  benefitsLabel?: string;
 }
 
 interface InteractiveServiceCardProps {
@@ -32,6 +38,11 @@ const getIconComponent = (iconName: string) => {
     building: Building,
     "bar-chart-3": BarChart3,
     "book-open": BookOpen,
+    monitor: Monitor,
+    "graduation-cap": GraduationCap,
+    accessibility: Accessibility,
+    server: Server,
+    "trending-up": TrendingUp,
   };
 
   return iconMap[iconName] || Briefcase;
@@ -99,22 +110,29 @@ export const InteractiveServiceCard = ({
               </div>
             </div>
             <div className="px-6 py-6">
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                {service.detailedInfo}
-              </p>
+              {service.benefits && service.benefits.length > 0 && (
+                <div className="mb-6">
+                  <h4 className="font-medium mb-3">
+                    {service.benefitsLabel || "What you get:"}
+                  </h4>
+                  <ul className="space-y-2">
+                    {service.benefits.map((benefit, index) => (
+                      <li
+                        key={index}
+                        className="flex items-start gap-2 text-sm text-muted-foreground"
+                      >
+                        <span className="text-primary mt-1">•</span>
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               <div>
-                <h4 className="font-medium mb-3">What's Included:</h4>
-                <ul className="space-y-2">
-                  {service.benefits.map((benefit, index) => (
-                    <li
-                      key={index}
-                      className="flex items-start gap-2 text-sm text-muted-foreground"
-                    >
-                      <span className="text-primary mt-1">•</span>
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
+                <h4 className="font-medium mb-2">Why it matters</h4>
+                <p className="text-muted-foreground leading-relaxed">
+                  {service.detailedInfo}
+                </p>
               </div>
             </div>
             <div className="border-t border-border/60 px-6 py-4 flex justify-end gap-3">

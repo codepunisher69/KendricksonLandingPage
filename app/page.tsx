@@ -77,94 +77,145 @@ export default function Home() {
 
   const services = [
     {
+      id: "website-design-maintenance",
+      title: "Website Design & Maintenance",
+      description:
+        "We build responsive, modern, and visually compelling websites tailored to your brand—and keep them running smoothly.",
+      icon: "monitor",
+      detailedInfo:
+        "Your website is often the first impression people have of you. A well-designed, reliable site builds trust, enhances usability, and helps convert visitors into clients, partners, or donors.",
+      benefitsLabel: "What you get:",
+      benefits: [
+        "Custom website design aligned with your organization’s identity",
+        "Mobile-friendly layouts so your site works well on phones, tablets, and desktops",
+        "Regular updates, security patches, backups, and performance monitoring",
+        "Ongoing maintenance: content updates, plugin/theme upgrades, and minor adjustments",
+        "Fast load times, optimized images, SEO-friendly architecture",
+      ],
+    },
+    {
+      id: "counseling-services",
+      title: "Counseling Services",
+      description:
+        "Certified counselors guiding you through education compliance and student support.",
+      icon: "graduation-cap",
+      detailedInfo:
+        "Ensuring that student records are accurate and that specialized supports are properly arranged protects both your students and your institution. Our counselors help reduce risk, improve educational outcomes, and foster a learning environment that meets everyone’s needs.",
+      benefitsLabel: "Services include:",
+      benefits: [
+        "Transcript Audits: Review and verification of academic records to ensure accuracy and compliance",
+        "Special Education Counseling: Expert advice on IEP/504 plans, accommodations, and legal obligations",
+        "Navigation of regulatory requirements to ensure your students get the support they deserve",
+      ],
+    },
+    {
+      id: "special-education-services",
+      title: "Special Education Services",
+      description:
+        "From speech support to full compliance reviews, we help your programs flourish.",
+      icon: "accessibility",
+      detailedInfo:
+        "Special education is both essential and complex. By working with us, you ensure that your services are effective, documented, and fully compliant—helping students reach their potential while protecting your district or organization from legal or administrative risks.",
+      benefitsLabel: "What we offer:",
+      benefits: [
+        "Speech therapy and communication support services",
+        "Folder audits: ensuring documentation, evaluations, meetings, and accommodations are properly recorded",
+        "TEA (Texas Education Agency) compliance: guidance to meet state standards, reporting, and oversight",
+        "Staff training: helping your teachers and administrators understand best practices and documentation requirements",
+      ],
+    },
+    {
+      id: "it-support",
+      title: "IT Support",
+      description:
+        "Dependable, flexible IT without full-time overhead—scaled to your needs.",
+      icon: "server",
+      detailedInfo:
+        "Technology issues interrupt operations and cost money. With reliable IT support, you minimize downtime, protect data, maintain productivity, and have peace of mind without over-investing in full-time staff.",
+      benefitsLabel: "What we offer:",
+      benefits: [
+        "On-demand troubleshooting: software issues, network problems, hardware glitches",
+        "Preventative maintenance: patching, security updates, backups",
+        "System monitoring and disaster recovery planning",
+        "Infrastructure setup: servers, email systems, user permissions, remote access",
+        "Scalable support plans—use us when you need us, avoid paying full-time wages when you don’t",
+      ],
+    },
+    {
+      id: "increasing-revenue",
+      title: "Increasing Revenue",
+      description:
+        "Grow your funding streams through strategic alliances and partnerships.",
+      icon: "trending-up",
+      detailedInfo:
+        "Relying on a single revenue stream is risky. Outside partnerships provide financial stability, broaden your reach, and open up new opportunities. They let you do more of what you care about—while sharing costs, expertise, and impact.",
+      benefitsLabel: "How we help:",
+      benefits: [
+        "Identify potential partners: corporations, foundations, nonprofits, and community stakeholders aligned with your mission",
+        "Structure mutually beneficial agreements: grants, sponsorships, joint programs or services",
+        "Develop proposals, pitches, and contractual frameworks to formalize partnerships",
+        "Support with relationship management and performance tracking to ensure ongoing value",
+      ],
+    },
+    {
       id: "strategic-planning",
       title: "Strategic Planning",
       description:
-        "Develop comprehensive strategic plans that align with your educational goals and vision for student success.",
+        "Create a clear, actionable plan that aligns resources with your priorities.",
       icon: "briefcase",
       detailedInfo:
-        "Our strategic planning service helps educational institutions create comprehensive roadmaps for success. We work closely with your leadership team to assess current capabilities, identify opportunities, and develop actionable strategies that drive meaningful change.",
-      benefits: [
-        "Comprehensive needs assessment",
-        "Goal alignment and prioritization",
-        "Implementation roadmap development",
-        "Progress monitoring and evaluation",
-      ],
+        "Without a clear, actionable plan, even the strongest organizations can lose focus. Strategic planning creates a shared vision, aligns resources with priorities, and ensures accountability across every level of the organization. It transforms ideas into measurable outcomes and keeps you on course when challenges arise.",
+      benefits: [],
     },
     {
       id: "partnership-development",
       title: "Partnership Development",
       description:
-        "Build meaningful partnerships between educational institutions, businesses, and community organizations.",
+        "Build intentional collaborations that expand reach and diversify resources.",
       icon: "users",
       detailedInfo:
-        "We facilitate strategic partnerships that create value for all stakeholders. Our approach focuses on building sustainable relationships that enhance educational opportunities and community engagement.",
-      benefits: [
-        "Stakeholder identification and mapping",
-        "Partnership agreement development",
-        "Relationship management strategies",
-        "Impact measurement and reporting",
-      ],
+        "The right partnerships can open doors to funding, expertise, and community trust that no organization can achieve alone. Building intentional collaborations allows you to expand your reach, diversify resources, and strengthen your impact while avoiding duplication of effort.",
+      benefits: [],
     },
     {
       id: "program-evaluation",
       title: "Program Evaluation",
       description:
-        "Assess the effectiveness of your educational programs and identify opportunities for improvement and growth.",
+        "Use objective data to learn what’s working, what’s not, and why.",
       icon: "clipboard-check",
       detailedInfo:
-        "Our program evaluation services provide data-driven insights into your educational initiatives. We use proven methodologies to assess program effectiveness and recommend evidence-based improvements.",
-      benefits: [
-        "Comprehensive program assessment",
-        "Data collection and analysis",
-        "Performance benchmarking",
-        "Improvement recommendations",
-      ],
+        "Programs that aren’t regularly evaluated risk becoming ineffective or misaligned with community needs. Evaluation provides objective data to show what’s working, what’s not, and where to invest resources. It also strengthens credibility with funders, boards, and stakeholders by demonstrating accountability and results.",
+      benefits: [],
     },
     {
       id: "administrative-support",
       title: "Administrative Support",
       description:
-        "Provide expert guidance on administrative challenges, leveraging our extensive experience in school leadership.",
+        "Reliable systems that keep daily operations smooth and compliant.",
       icon: "building",
       detailedInfo:
-        "Our administrative support services help educational leaders navigate complex challenges and implement best practices. We provide practical solutions based on years of hands-on experience in educational administration.",
-      benefits: [
-        "Policy development and implementation",
-        "Operational efficiency optimization",
-        "Leadership development and coaching",
-        "Crisis management and planning",
-      ],
+        "Behind every thriving organization is a foundation of reliable administrative processes. From compliance and record-keeping to scheduling and communication, administrative support ensures daily operations run smoothly. When these systems are in place, leaders and staff are freed to focus on serving students and communities.",
+      benefits: [],
     },
     {
       id: "data-analysis",
       title: "Data Analysis",
       description:
-        "Transform educational data into actionable insights that drive decision-making and improve student outcomes.",
+        "Turn raw information into actionable insight for confident decisions.",
       icon: "bar-chart-3",
       detailedInfo:
-        "We help educational institutions harness the power of data to make informed decisions. Our data analysis services turn complex information into clear, actionable insights that drive student success.",
-      benefits: [
-        "Data collection and management",
-        "Statistical analysis and reporting",
-        "Predictive modeling and forecasting",
-        "Dashboard development and visualization",
-      ],
+        "Numbers alone don’t drive change—it’s what you do with them that matters. Data analysis translates raw information into actionable insights, empowering leaders to make informed decisions, allocate resources effectively, and track progress toward goals. Good analysis turns uncertainty into clarity.",
+      benefits: [],
     },
     {
       id: "professional-development",
       title: "Professional Development",
       description:
-        "Design and deliver customized professional development programs for educators and administrators.",
+        "Invest in your people to elevate skills, confidence, and results.",
       icon: "book-open",
       detailedInfo:
-        "Our professional development programs are tailored to meet the specific needs of your educational team. We create engaging, practical learning experiences that enhance skills and drive performance.",
-      benefits: [
-        "Customized training programs",
-        "Skill assessment and gap analysis",
-        "Interactive workshops and seminars",
-        "Ongoing support and mentoring",
-      ],
+        "Investing in your people is the single most effective way to elevate your organization. Professional development builds skills, increases confidence, and boosts morale, ensuring staff are prepared to meet today’s challenges and tomorrow’s opportunities. Strong teams deliver stronger results for students and communities.",
+      benefits: [],
     },
   ];
 
@@ -354,7 +405,7 @@ export default function Home() {
         </div>
       </section>
       <section className="mt-20 pt-12 lg:mt-28" id="team">
-        <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
           <div className="mb-8 text-center sm:mb-12">
             <div className="mb-3 flex justify-center">
               <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#FF72E1]/15 to-[#F54C7A]/15 px-2.5 py-1 text-xs font-medium tracking-wide text-muted-foreground ring-1 ring-[#FF72E1]/30">
@@ -372,7 +423,7 @@ export default function Home() {
               education to serve your institution.
             </p>
           </div>
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
             <InteractiveTeamCard
               bio="With over 30 years of experience in public education in Texas, including more than 15 years as a public school administrator, Kristi brings unparalleled expertise to every consultation."
               email="kristi.kendrickson@kenedu.net"
@@ -383,8 +434,42 @@ export default function Home() {
             <InteractiveTeamCard
               bio="As a public school professional in Texas, Kinsey brings valuable insights into the financial and operational aspects of educational institutions, ensuring our solutions are both effective and practical."
               email="kinsey.mickelson@kenedu.net"
+              imageUrl="/kinsey.PNG"
               name="Kinsey Mickelson"
               position="CFO"
+            />
+            <InteractiveTeamCard
+              bio="With over 20 years of experience in educational counseling, Anissa brings unmatched expertise in guiding students, families, and educators through the complexities of academic and personal development. As a Licensed Professional Counselor (LPC), she combines compassion with professionalism, ensuring that every individual she works with feels supported, valued, and empowered to succeed."
+              email=""
+              imageUrl="/anissa.jpg"
+              name="Anissa Geeslin"
+              position="Director of Counseling Services and Admin Liaison"
+            />
+            <InteractiveTeamCard
+              bio="Becky has more than 20 years of experience in education and administration, where she has earned a reputation for her organization, efficiency, and ability to keep teams running smoothly. Known as the steady hand behind the scenes, Becky ensures that operations remain seamless, deadlines are met, and every detail is managed with care."
+              email=""
+              imageUrl="/becky.jpeg"
+              name="Becky Bourland"
+              position="Executive Administrative Assistant"
+            />
+            <InteractiveTeamCard
+              bio="With over a decade of experience in educational leadership, Skylar bridges the gap between innovation and communication. She oversees the organization’s social media presence, ensuring that the message of impact and progress reaches the right audiences. Her leadership background adds depth and vision to every outreach effort."
+              email=""
+              imageUrl="/skylar.PNG"
+              name="Skylar Funk"
+              position="Educational Leadership & Marketing Coordinator"
+            />
+            <InteractiveTeamCard
+              bio="Jacob leads the technology systems that keep the organization running securely and efficiently. As IT Director, he manages infrastructure, provides technical solutions, and ensures that both staff and clients have the tools they need to succeed in a digital world. His expertise and dedication make him the go-to resource for all technology needs."
+              email=""
+              imageUrl="/jacob.jpeg"
+              name="Jacob Mickelson"
+              position="Director of Information Technology"
+            />
+            <InteractiveTeamCard
+              bio="Trevor specializes in creating and maintaining professional websites that reflect the vision and goals of the organization. With a focus on user-friendly design and functionality, he develops web platforms that not only look great but also perform seamlessly. His technical skills and creative approach bring digital projects to life."
+              name="Trevor Mickelson"
+              position="Web Development & Design Specialist"
             />
           </div>
         </div>
