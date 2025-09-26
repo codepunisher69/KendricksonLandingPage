@@ -426,14 +426,14 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
             <InteractiveTeamCard
               bio="With over 30 years of experience in public education in Texas, including more than 15 years as a public school administrator, Kristi brings unparalleled expertise to every consultation."
-              email="kristi@kenedu.net"
+              email="kristi.kendrickson@kenedu.net"
               imageUrl="/kkheadshot.png"
               name="Kristi Kendrickson"
               position="CEO & Founder"
             />
             <InteractiveTeamCard
               bio="As a public school professional in Texas, Kinsey brings valuable insights into the financial and operational aspects of educational institutions, ensuring our solutions are both effective and practical."
-              email="kinsey@kenedu.net"
+              email="kinsey.mickelson@kenedu.net"
               imagePositionClassName="object-[50%_30%]"
               imageUrl="/kinsey.PNG"
               name="Kinsey Mickelson"
@@ -441,21 +441,21 @@ export default function Home() {
             />
             <InteractiveTeamCard
               bio="With over 20 years of experience in educational counseling, Anissa brings unmatched expertise in guiding students, families, and educators through the complexities of academic and personal development. As a Licensed Professional Counselor (LPC), she combines compassion with professionalism, ensuring that every individual she works with feels supported, valued, and empowered to succeed."
-              email="anissa@kenedu.net"
+              email="anissa.geeslin@kenedu.net"
               imageUrl="/anissa.jpg"
               name="Anissa Geeslin"
               position="Director of Counseling Services and Admin Liaison"
             />
             <InteractiveTeamCard
               bio="Becky has more than 20 years of experience in education and administration, where she has earned a reputation for her organization, efficiency, and ability to keep teams running smoothly. Known as the steady hand behind the scenes, Becky ensures that operations remain seamless, deadlines are met, and every detail is managed with care."
-              email="becky@kenedu.net"
+              email="becky.bourland@kenedu.net"
               imageUrl="/becky.jpeg"
               name="Becky Bourland"
               position="Executive Administrative Assistant"
             />
             <InteractiveTeamCard
               bio="With over a decade of experience in educational leadership, Skylar bridges the gap between innovation and communication. She oversees the organization’s social media presence, ensuring that the message of impact and progress reaches the right audiences. Her leadership background adds depth and vision to every outreach effort."
-              email="skylar@kenedu.net"
+              email="skylar.funk@kenedu.net"
               imagePositionClassName="object-[50%_35%]"
               imageUrl="/skylar.PNG"
               name="Skylar Funk"
@@ -463,14 +463,14 @@ export default function Home() {
             />
             <InteractiveTeamCard
               bio="Jacob leads the technology systems that keep the organization running securely and efficiently. As IT Director, he manages infrastructure, provides technical solutions, and ensures that both staff and clients have the tools they need to succeed in a digital world. His expertise and dedication make him the go-to resource for all technology needs."
-              email="jacob@kenedu.net"
+              email="jacob.mickelson@kenedu.net"
               imageUrl="/jacob.jpeg"
               name="Jacob Mickelson"
               position="Director of Information Technology"
             />
             <InteractiveTeamCard
               bio="Trevor specializes in creating and maintaining professional websites that reflect the vision and goals of the organization. With a focus on user-friendly design and functionality, he develops web platforms that not only look great but also perform seamlessly. His technical skills and creative approach bring digital projects to life."
-              email="trevor@kenedu.net"
+              email="trevor.mickelson@kenedu.net"
               imageUrl="/trevor.png"
               name="Trevor Mickelson"
               position="Web Development & Design Specialist"
