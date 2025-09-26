@@ -72,7 +72,7 @@ export const InteractiveTeamCard = ({
           <Image
             fill
             alt={`${name} — ${position}`}
-            className="object-cover object-center grayscale contrast-125 brightness-105 transition-transform duration-300 group-hover:scale-[1.02]"
+            className="object-cover object-[50%_40%] grayscale contrast-125 brightness-105 transition-transform duration-300 group-hover:scale-[1.02]"
             priority={false}
             sizes="(max-width: 1024px) 100vw, 480px"
             src={imageUrl}

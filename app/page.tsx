@@ -468,6 +468,7 @@ export default function Home() {
             />
             <InteractiveTeamCard
               bio="Trevor specializes in creating and maintaining professional websites that reflect the vision and goals of the organization. With a focus on user-friendly design and functionality, he develops web platforms that not only look great but also perform seamlessly. His technical skills and creative approach bring digital projects to life."
+              imageUrl="/trevor.png"
               name="Trevor Mickelson"
               position="Web Development & Design Specialist"
             />
