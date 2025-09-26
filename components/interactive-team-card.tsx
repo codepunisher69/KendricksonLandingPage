@@ -104,7 +104,7 @@ export const InteractiveTeamCard = ({
       <div className="px-6 pb-6 pt-5 flex-1 flex flex-col">
         <div className="flex items-start justify-between gap-3">
           <div className="flex-1">
-            <p className="text-lg font-semibold leading-tight text-foreground">
+            <p className="text-lg font-semibold leading-tight bg-gradient-to-b from-[#FF72E1] to-[#F54C7A] bg-clip-text text-transparent">
               {name}
             </p>
             <p className="text-sm text-primary font-medium mt-1">{position}</p>

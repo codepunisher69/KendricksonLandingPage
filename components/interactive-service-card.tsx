@@ -77,7 +77,7 @@ export const InteractiveServiceCard = ({
             <IconComponent className="h-5 w-5" />
           </div>
           <div className="flex min-w-0 flex-col">
-            <p className="truncate text-base font-medium tracking-tight">
+            <p className="truncate text-base font-medium tracking-tight bg-gradient-to-b from-[#FF72E1] to-[#F54C7A] bg-clip-text text-transparent">
               {service.title}
             </p>
           </div>
@@ -97,8 +97,17 @@ export const InteractiveServiceCard = ({
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
           <div
+            aria-label="Close service details"
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+            role="button"
+            tabIndex={0}
             onClick={handleClose}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handleClose();
+              }
+            }}
           />
           <div className="relative w-full max-w-2xl rounded-2xl border border-border/60 bg-background shadow-2xl">
             <div className="border-b border-border/60 px-6 py-4">
@@ -106,7 +115,9 @@ export const InteractiveServiceCard = ({
                 <div className="grid size-10 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/20">
                   <IconComponent className="h-5 w-5" />
                 </div>
-                <h3 className="text-xl font-semibold">{service.title}</h3>
+                <h3 className="text-xl font-semibold bg-gradient-to-b from-[#FF72E1] to-[#F54C7A] bg-clip-text text-transparent">
+                  {service.title}
+                </h3>
               </div>
             </div>
             <div className="px-6 py-6">
