@@ -10,6 +10,7 @@ type TeamCardProps = {
   bio: string;
   email?: string;
   imageUrl?: string;
+  imagePositionClassName?: string;
 };
 
 export const InteractiveTeamCard = ({
@@ -18,6 +19,7 @@ export const InteractiveTeamCard = ({
   bio,
   email,
   imageUrl,
+  imagePositionClassName,
 }: TeamCardProps) => {
   const [copied, setCopied] = useState(false);
 
@@ -72,7 +74,7 @@ export const InteractiveTeamCard = ({
           <Image
             fill
             alt={`${name} — ${position}`}
-            className="object-cover object-[50%_40%] grayscale contrast-125 brightness-105 transition-transform duration-300 group-hover:scale-[1.02]"
+            className={`object-cover grayscale contrast-125 brightness-105 transition-transform duration-300 group-hover:scale-[1.02] ${imagePositionClassName || "object-[50%_40%]"}`}
             priority={false}
             sizes="(max-width: 1024px) 100vw, 480px"
             src={imageUrl}
