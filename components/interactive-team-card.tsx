@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import { Copy, Check } from "lucide-react";
 
 type TeamCardProps = {
@@ -9,7 +9,7 @@ type TeamCardProps = {
   position: string;
   bio: string;
   email?: string;
-  imageUrl?: string;
+  imageUrl?: string | StaticImageData;
   imagePositionClassName?: string;
 };
 
@@ -79,6 +79,7 @@ export const InteractiveTeamCard = ({
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
             quality={70}
             src={imageUrl}
+            placeholder={typeof imageUrl === "object" ? "blur" : undefined}
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-gradient-to-br from-primary/15 to-primary/8">

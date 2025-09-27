@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 
 import { getImageList, createImageCarouselConfig } from "@/lib/image-utils";
+import type { StaticImageData } from "next/image";
 
 interface ImageCarouselProps {
   imageDirectory?: string;
@@ -19,7 +20,7 @@ export const ImageCarousel = ({
   className = "",
 }: ImageCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [images, setImages] = useState<string[]>([]);
+  const [images, setImages] = useState<StaticImageData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -94,6 +95,7 @@ export const ImageCarousel = ({
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 480px"
                 quality={70}
                 src={image}
+                placeholder="blur"
               />
             </div>
           ))}

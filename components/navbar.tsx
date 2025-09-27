@@ -10,6 +10,7 @@ import {
 import { Link } from "@heroui/link";
 import * as React from "react";
 import Image from "next/image";
+import logo from "@/public/logo-simple.png";
 import { NavbarMenu, NavbarMenuItem } from "@heroui/navbar";
 
 export const Navbar = () => {
@@ -68,7 +69,8 @@ export const Navbar = () => {
                 fill
                 priority
                 sizes="(max-width: 640px) 64px, 64px"
-                src="/logo-simple.png"
+                src={logo}
+                placeholder="blur"
               />
             </div>
           </Link>
