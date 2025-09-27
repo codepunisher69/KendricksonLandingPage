@@ -91,7 +91,8 @@ export const ImageCarousel = ({
                 alt={`Gallery image ${index + 1}`}
                 className="object-cover grayscale contrast-125 brightness-105"
                 priority={index === 0}
-                sizes="(max-width: 1024px) 100vw, 480px"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 480px"
+                quality={70}
                 src={image}
               />
             </div>

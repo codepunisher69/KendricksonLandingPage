@@ -312,10 +312,13 @@ export default function Home() {
                   <figure className="relative aspect-[4/3]">
                     <Image
                       fill
+                      // Keep high priority but reduce decode cost
                       priority
+                      fetchPriority="high"
                       alt="Kendrickson headshot"
                       className="object-cover grayscale contrast-125 brightness-105 transition-transform duration-700 group-hover:scale-105"
-                      sizes="(max-width: 1024px) 100vw, 360px"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                      quality={70}
                       src="/kkheadshot.png"
                     />
                     {/* Professional overlay */}

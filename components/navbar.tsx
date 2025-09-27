@@ -9,6 +9,7 @@ import {
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
 import * as React from "react";
+import Image from "next/image";
 import { NavbarMenu, NavbarMenuItem } from "@heroui/navbar";
 
 export const Navbar = () => {
@@ -60,11 +61,16 @@ export const Navbar = () => {
               }
             }}
           >
-            <img
-              alt="logo"
-              className="h-9 w-16 relative z-10"
-              src="/logo-simple.png"
-            />
+            <div className="relative h-9 w-16 z-10">
+              <Image
+                alt="Kendrickson logo"
+                className="object-contain"
+                fill
+                priority
+                sizes="(max-width: 640px) 64px, 64px"
+                src="/logo-simple.png"
+              />
+            </div>
           </Link>
         </NavbarBrand>
       </NavbarContent>

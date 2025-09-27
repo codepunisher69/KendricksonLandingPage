@@ -76,7 +76,8 @@ export const InteractiveTeamCard = ({
             alt={`${name} — ${position}`}
             className={`object-cover grayscale contrast-125 brightness-105 transition-transform duration-300 group-hover:scale-[1.02] ${imagePositionClassName || "object-[50%_40%]"}`}
             priority={false}
-            sizes="(max-width: 1024px) 100vw, 480px"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 480px"
+            quality={70}
             src={imageUrl}
           />
         ) : (

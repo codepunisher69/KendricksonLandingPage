@@ -19,7 +19,8 @@ export const TeamCard = ({ name, position, bio, imageUrl }: TeamCardProps) => {
           alt={`${name} — ${position}`}
           className="object-cover"
           priority={false}
-          sizes="(max-width: 1024px) 100vw, 360px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+          quality={70}
           src={imageUrl}
         />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.18),transparent_35%)]" />
