@@ -1,13 +1,13 @@
 "use client";
 
 import React from "react";
-import Image, { type StaticImageData } from "next/image";
+import Image from "next/image";
 
 type TeamCardProps = {
   name: string;
   position: string;
   bio?: string;
-  imageUrl: string | StaticImageData;
+  imageUrl: string;
 };
 
 export const TeamCard = ({ name, position, bio, imageUrl }: TeamCardProps) => {
@@ -22,7 +22,6 @@ export const TeamCard = ({ name, position, bio, imageUrl }: TeamCardProps) => {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
           quality={70}
           src={imageUrl}
-          placeholder={typeof imageUrl === "object" ? "blur" : undefined}
         />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.18),transparent_35%)]" />
       </div>

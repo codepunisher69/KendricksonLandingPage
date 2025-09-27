@@ -3,7 +3,6 @@
 import { button as buttonStyles } from "@heroui/theme";
 import { Button } from "@heroui/button";
 import Image from "next/image";
-import heroHeadshot from "@/public/kkheadshot.png";
 import { useState } from "react";
 
 import { title, subtitle } from "@/components/primitives";
@@ -320,8 +319,7 @@ export default function Home() {
                       className="object-cover grayscale contrast-125 brightness-105 transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
                       quality={70}
-                      src={heroHeadshot}
-                      placeholder="blur"
+                      src="/kkheadshot.png"
                     />
                     {/* Professional overlay */}
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
