@@ -309,17 +309,17 @@ export default function Home() {
 
                 {/* Main image container */}
                 <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-card/90 shadow-xl backdrop-blur-sm">
-                  <figure className="relative aspect-[4/3]">
+                  <figure className="relative aspect-[5/4]">
                     <Image
                       fill
                       // Keep high priority but reduce decode cost
                       priority
                       fetchPriority="high"
                       alt="Kendrickson headshot"
-                      className="object-cover grayscale contrast-125 brightness-105 transition-transform duration-700 group-hover:scale-105"
+                      className="object-cover object-[50%_35%] transition-transform duration-700"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
                       quality={70}
-                      src="/kkheadshot.png"
+                      src="/IMG_4771.JPEG"
                     />
                     {/* Professional overlay */}
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
@@ -430,7 +430,7 @@ export default function Home() {
             <InteractiveTeamCard
               bio="With over 30 years of experience in public education in Texas, including more than 15 years as a public school administrator, Kristi brings unparalleled expertise to every consultation."
               email="kristi.kendrickson@kenedu.net"
-              imageUrl="/kkheadshot.png"
+              imageUrl="/IMG_4771.JPEG"
               name="Kristi Kendrickson"
               position="CEO & Founder"
             />

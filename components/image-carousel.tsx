@@ -26,7 +26,7 @@ export const ImageCarousel = ({
     const loadImages = async () => {
       try {
         const config = createImageCarouselConfig(imageDirectory);
-        const imagePaths = getImageList(config);
+        const imagePaths = await getImageList(config);
 
         setImages(imagePaths);
         setIsLoading(false);
