@@ -457,14 +457,6 @@ export default function Home() {
               position="Executive Administrative Assistant"
             />
             <InteractiveTeamCard
-              bio="With over a decade of experience in educational leadership, Skylar bridges the gap between innovation and communication. She oversees the organization’s social media presence, ensuring that the message of impact and progress reaches the right audiences. Her leadership background adds depth and vision to every outreach effort."
-              email="skylar.funk@kenedu.net"
-              imagePositionClassName="object-[50%_35%]"
-              imageUrl="/skylar.PNG"
-              name="Skylar Funk"
-              position="Educational Leadership & Marketing Coordinator"
-            />
-            <InteractiveTeamCard
               bio="Jacob leads the technology systems that keep the organization running securely and efficiently. As IT Director, he manages infrastructure, provides technical solutions, and ensures that both staff and clients have the tools they need to succeed in a digital world. His expertise and dedication make him the go-to resource for all technology needs."
               email="jacob.mickelson@kenedu.net"
               imageUrl="/jacob.jpeg"
