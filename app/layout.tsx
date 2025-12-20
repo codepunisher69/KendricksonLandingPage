@@ -3,7 +3,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import React from "react";
-import { ScrollShadow } from "@heroui/scroll-shadow";
+import { ScrollShadow } from "@heroui/react";
 
 import { Providers } from "./providers";
 
