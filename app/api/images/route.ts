@@ -4,6 +4,8 @@ import fs from "node:fs/promises";
 
 const ALLOWED_EXTENSIONS = [".jpeg", ".jpg", ".png", ".webp", ".heic", ".heif"];
 
+export const runtime = "nodejs";
+
 export async function GET(request: Request) {
   try {
     const url = new URL(request.url);
