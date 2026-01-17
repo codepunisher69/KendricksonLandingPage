@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { createPortal } from "react-dom";
 import { Button } from "@heroui/button";
 import {
   Briefcase,
@@ -94,83 +95,85 @@ export const InteractiveServiceCard = ({
         </div>
       </div>
 
-      {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          <div
-            aria-label="Close service details"
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm"
-            role="button"
-            tabIndex={0}
-            onClick={handleClose}
-            onKeyDown={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                e.preventDefault();
-                handleClose();
-              }
-            }}
-          />
-          <div className="relative w-full max-w-2xl rounded-2xl border border-border/60 bg-background shadow-2xl">
-            <div className="border-b border-border/60 px-6 py-4">
-              <div className="flex items-center gap-3">
-                <div className="grid size-10 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/20">
-                  <IconComponent className="h-5 w-5" />
-                </div>
-                <h3 className="text-xl font-semibold bg-gradient-to-b from-[#FF72E1] to-[#F54C7A] bg-clip-text text-transparent">
-                  {service.title}
-                </h3>
-              </div>
-            </div>
-            <div className="px-6 py-6">
-              {service.benefits && service.benefits.length > 0 && (
-                <div className="mb-6">
-                  <h4 className="font-medium mb-3">
-                    {service.benefitsLabel || "What you get:"}
-                  </h4>
-                  <ul className="space-y-2">
-                    {service.benefits.map((benefit, index) => (
-                      <li
-                        key={index}
-                        className="flex items-start gap-2 text-sm text-muted-foreground"
-                      >
-                        <span className="text-primary mt-1">•</span>
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              <div>
-                <h4 className="font-medium mb-2">Why it matters</h4>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.detailedInfo}
-                </p>
-              </div>
-            </div>
-            <div className="border-t border-border/60 px-6 py-4 flex justify-end gap-3">
-              <Button color="primary" variant="light" onClick={handleClose}>
-                Close
-              </Button>
-              <Button
-                color="primary"
-                onClick={() => {
+      {isOpen &&
+        createPortal(
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+            <div
+              aria-label="Close service details"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+              role="button"
+              tabIndex={0}
+              onClick={handleClose}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
                   handleClose();
-                  // Scroll to contact section
-                  const element = document.getElementById("contact");
+                }
+              }}
+            />
+            <div className="relative z-[101] w-full max-w-2xl rounded-2xl border border-border/60 bg-background shadow-2xl overflow-hidden">
+              <div className="border-b border-border/60 px-6 py-4">
+                <div className="flex items-center gap-3">
+                  <div className="grid size-10 place-items-center rounded-md bg-primary/10 text-primary ring-1 ring-primary/20">
+                    <IconComponent className="h-5 w-5" />
+                  </div>
+                  <h3 className="text-xl font-semibold bg-gradient-to-b from-[#FF72E1] to-[#F54C7A] bg-clip-text text-transparent">
+                    {service.title}
+                  </h3>
+                </div>
+              </div>
+              <div className="px-6 py-6 max-h-[70vh] overflow-y-auto">
+                {service.benefits && service.benefits.length > 0 && (
+                  <div className="mb-6">
+                    <h4 className="font-medium mb-3">
+                      {service.benefitsLabel || "What you get:"}
+                    </h4>
+                    <ul className="space-y-2">
+                      {service.benefits.map((benefit, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                        >
+                          <span className="text-primary mt-1">•</span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                <div>
+                  <h4 className="font-medium mb-2">Why it matters</h4>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {service.detailedInfo}
+                  </p>
+                </div>
+              </div>
+              <div className="border-t border-border/60 px-6 py-4 flex justify-end gap-3 bg-background/80 backdrop-blur">
+                <Button color="primary" variant="light" onClick={handleClose}>
+                  Close
+                </Button>
+                <Button
+                  color="primary"
+                  onClick={() => {
+                    handleClose();
+                    // Scroll to contact section
+                    const element = document.getElementById("contact");
 
-                  if (element) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                }}
-              >
-                Get Started
-              </Button>
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
+                >
+                  Get Started
+                </Button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </div>,
+          document.body,
+        )}
     </>
   );
 };
