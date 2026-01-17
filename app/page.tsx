@@ -513,7 +513,7 @@ export default function Home() {
           </SlideUp>
           <FadeIn
             delay={0.2}
-            className="mx-auto max-w-xl relative overflow-hidden rounded-2xl border border-border/60 bg-card/70 shadow-[0_0_50px_-5px_rgba(236,72,153,0.4)] backdrop-blur-sm"
+            className="mx-auto max-w-xl relative overflow-hidden rounded-2xl border border-border/60 bg-card/70 shadow-[0_0_50px_-5px_rgba(236,72,153,0.4)]"
           >
             <div
               aria-hidden

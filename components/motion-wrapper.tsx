@@ -18,7 +18,7 @@ export const FadeIn = ({
 }: MotionWrapperProps) => {
   return (
     <motion.div
-      className={className}
+      className={`${className} will-change-transform`}
       initial={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       viewport={viewport}
@@ -36,7 +36,7 @@ export const SlideUp = ({
 }: MotionWrapperProps) => {
   return (
     <motion.div
-      className={className}
+      className={`${className} will-change-transform`}
       initial={{ opacity: 0, y: 30 }}
       transition={{ duration: 0.6, delay, ease: "easeOut" }}
       viewport={{ once: true, margin: "0px 0px -50px 0px" }}

@@ -77,7 +77,7 @@ export const ImageCarousel = ({
 
   return (
     <div
-      className={`relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 shadow-[0_0_40px_-5px_rgba(236,72,153,0.4)] backdrop-blur-sm ${className}`}
+      className={`relative overflow-hidden rounded-2xl border border-border/50 bg-card/80 shadow-[0_0_40px_-5px_rgba(236,72,153,0.4)] ${className}`}
     >
       <div className="relative aspect-[4/3] overflow-hidden">
         <div
