@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 import React from "react";
-import { ScrollShadow } from "@heroui/react";
 
 import { Providers } from "./providers";
 
@@ -41,16 +40,13 @@ export default function RootLayout({
       >
         <BackgroundBeams />
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
-          {/* Make the WHOLE page the scroll container */}
-          <ScrollShadow className="h-dvh min-h-0 overflow-y-auto" size={100}>
-            <div className="min-h-dvh flex flex-col">
-              <Navbar />
-              <main className="container mx-auto max-w-7xl flex-1 pt-16 px-6 pb-10">
-                {children}
-              </main>
-              <Footer />
-            </div>
-          </ScrollShadow>
+          <div className="min-h-dvh flex flex-col">
+            <Navbar />
+            <main className="container mx-auto max-w-7xl flex-1 pt-16 px-6 pb-10">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </Providers>
       </body>
     </html>

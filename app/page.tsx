@@ -309,17 +309,17 @@ export default function Home() {
 
                 {/* Main image container */}
                 <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-card/90 shadow-xl backdrop-blur-sm">
-                  <figure className="relative aspect-[5/4]">
+                  <figure className="relative aspect-[4/5]">
                     <Image
                       fill
                       // Keep high priority but reduce decode cost
                       priority
                       fetchPriority="high"
                       alt="Kendrickson headshot"
-                      className="object-cover object-[50%_35%] transition-transform duration-700"
+                      className="object-cover object-top transition-transform duration-700"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
                       quality={70}
-                      src="/IMG_4771.JPEG"
+                      src="/hero-kristi.jpg"
                     />
                     {/* Professional overlay */}
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
@@ -430,7 +430,7 @@ export default function Home() {
             <InteractiveTeamCard
               bio="With over 30 years of experience in public education in Texas, including more than 15 years as a public school administrator, Kristi brings unparalleled expertise to every consultation."
               email="kristi.kendrickson@kenedu.net"
-              imageUrl="/IMG_4771.JPEG"
+              imageUrl="/hero-kristi.jpg"
               name="Kristi Kendrickson"
               position="CEO & Founder"
             />
@@ -575,7 +575,8 @@ export default function Home() {
               <div className="sm:col-span-2 flex flex-col items-center gap-4">
                 {submitStatus === "success" && (
                   <div className="rounded-lg bg-green-50 border border-green-200 px-4 py-3 text-sm text-green-800 dark:bg-green-900/20 dark:border-green-800 dark:text-green-200">
-                    ✓ Message sent successfully! We&apos;ll get back to you soon.
+                    ✓ Message sent successfully! We&apos;ll get back to you
+                    soon.
                   </div>
                 )}
                 {submitStatus === "error" && (

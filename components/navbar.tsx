@@ -7,6 +7,7 @@ import {
   NavbarItem,
   NavbarMenuToggle,
 } from "@heroui/navbar";
+import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import * as React from "react";
 import Image from "next/image";
@@ -143,8 +144,21 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      {/* Right: empty space for balance */}
-      <NavbarContent className="items-center" />
+      {/* Right: Schedule Button */}
+      <NavbarContent justify="end" className="hidden sm:flex">
+        <NavbarItem>
+          <Button
+            as={Link}
+            className="bg-gradient-to-r from-[#FF72E1] to-[#F54C7A] text-white shadow-sm hover:opacity-95 font-medium"
+            href="https://calendly.com/kristi-kendrickson-kenedu/30min?month=2026-01"
+            isExternal
+            radius="full"
+            variant="solid"
+          >
+            Schedule a Free Consult
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
 
       {/* Mobile menu */}
       <NavbarMenu className="sm:hidden">
@@ -195,6 +209,18 @@ export const Navbar = () => {
           >
             Contact Us
           </Link>
+        </NavbarMenuItem>
+        <NavbarMenuItem className="mt-2">
+          <Button
+            as={Link}
+            className="w-full bg-gradient-to-r from-[#FF72E1] to-[#F54C7A] text-white shadow-sm hover:opacity-95 font-medium"
+            href="https://calendly.com/kristi-kendrickson-kenedu/30min?month=2026-01"
+            isExternal
+            radius="full"
+            variant="solid"
+          >
+            Schedule a Free Consult
+          </Button>
         </NavbarMenuItem>
       </NavbarMenu>
     </HeroUINavbar>

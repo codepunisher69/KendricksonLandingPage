@@ -1,5 +1,5 @@
 // next.config.js (CommonJS)
-const path = require('path');
+const path = require("path");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -11,15 +11,9 @@ const nextConfig = {
     // Cache optimized images longer to reduce repeat downloads
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
     remotePatterns: [
-      { protocol: 'https', hostname: 'images.unsplash.com' },
-      { protocol: 'https', hostname: 'plus.unsplash.com' },
+      { protocol: "https", hostname: "images.unsplash.com" },
+      { protocol: "https", hostname: "plus.unsplash.com" },
     ],
-  },
-
-  webpack: (config) => {
-    // allow imports like "@/components/..."
-    config.resolve.alias['@'] = path.resolve(__dirname);
-    return config;
   },
 };
 
