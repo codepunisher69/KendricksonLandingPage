@@ -10,6 +10,8 @@ import { InteractiveServiceCard } from "@/components/interactive-service-card";
 import { InteractiveTeamCard } from "@/components/interactive-team-card";
 import { ImageCarousel } from "@/components/image-carousel";
 
+import { FadeIn, SlideUp } from "@/components/motion-wrapper";
+
 export default function Home() {
   const [formData, setFormData] = useState({
     name: "",
@@ -220,128 +222,125 @@ export default function Home() {
   ];
 
   return (
-    <section className="relative isolate flex flex-col items-center justify-center gap-4 py-8 sm:py-12 md:py-16">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-20 [background:linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] [background-size:36px_36px] [mask-image:radial-gradient(58%_65%_at_50%_2%,black,transparent)] opacity-[0.015] dark:opacity-[0.07]"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-30 bg-[radial-gradient(1200px_480px_at_50%_-30%,hsl(var(--primary)/0.015),transparent_72%)] dark:bg-[radial-gradient(1200px_600px_at_50%_-20%,hsl(var(--primary)/0.09),transparent_60%)]"
-      />
-
-      <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-        <div className="grid items-center gap-6 text-center lg:grid-cols-12 lg:gap-8 lg:text-left">
-          <div className="lg:col-span-7 xl:col-span-6 text-center lg:text-left">
-            <p
-              aria-label="eyebrow"
-              className="mx-auto mb-3 inline-block rounded-full border border-border/60 bg-card/60 px-3 py-1 text-xs font-medium tracking-wide text-muted-foreground backdrop-blur sm:text-[13px] lg:mx-0"
-            >
-              Empowering schools and districts
-            </p>
-            <h1 className="mx-auto max-w-2xl lg:mx-0">
-              <span className={title()}>
-                Simplifying complicated with&nbsp;
-              </span>
-              <span className={title({ color: "pink" })}>integrity</span>
-            </h1>
-            <p
-              className={subtitle({
-                class:
-                  "mx-auto mt-5 max-w-2xl text-balance text-muted-foreground lg:mx-0 leading-relaxed",
-              })}
-            >
-              We help create partnerships with educational entities that have a
-              growth mindset to create greater opportunities for students.
-            </p>
-            <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
-              <Button
-                aria-label="View our services"
-                className={
-                  buttonStyles({
-                    color: "primary",
-                    radius: "full",
-                    variant: "solid",
-                  }) + " px-6 py-3"
-                }
-                onClick={() => {
-                  const element = document.getElementById("services");
-
-                  if (element) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                }}
+    <div className="flex flex-col">
+      <section className="relative isolate flex flex-col items-center justify-center gap-8 py-20 sm:py-32 md:py-40">
+        <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+          <div className="grid items-center gap-12 text-center lg:grid-cols-12 lg:gap-16 lg:text-left">
+            <SlideUp className="lg:col-span-7 xl:col-span-6 text-center lg:text-left">
+              <p
+                aria-label="eyebrow"
+                className="mx-auto mb-6 inline-block rounded-full border border-pink-500/20 bg-pink-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-pink-500 uppercase backdrop-blur sm:text-sm lg:mx-0"
               >
-                Our Services
-              </Button>
-              <Button
-                aria-label="Contact us"
-                className={
-                  buttonStyles({
-                    color: "secondary",
-                    radius: "full",
-                    variant: "bordered",
-                  }) + " px-6 py-3"
-                }
-                onClick={() => {
-                  const element = document.getElementById("contact");
-
-                  if (element) {
-                    element.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                    });
-                  }
-                }}
+                Empowering schools and districts
+              </p>
+              <h1 className="mx-auto max-w-3xl lg:mx-0 text-5xl font-bold tracking-tight sm:text-7xl mb-6 leading-[1.1]">
+                <span className={title({ size: "lg" })}>
+                  Simplifying complicated with&nbsp;
+                </span>
+                <br className="hidden sm:block" />
+                <span className={title({ color: "pink", size: "lg" })}>
+                  integrity.
+                </span>
+              </h1>
+              <p
+                className={subtitle({
+                  class:
+                    "mx-auto mt-6 max-w-2xl text-lg sm:text-xl text-muted-foreground lg:mx-0 leading-relaxed",
+                })}
               >
-                Contact Us
-              </Button>
-            </div>
-          </div>
-          <div className="lg:col-span-5 xl:col-span-6">
-            <div className="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
-              <div className="relative group">
-                {/* Subtle glow effect */}
-                <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-pink-500/20 via-purple-500/10 to-blue-500/20 blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                We help create partnerships with educational entities that have
+                a growth mindset to create greater opportunities for students.
+              </p>
+              <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+                <Button
+                  aria-label="View our services"
+                  className={
+                    buttonStyles({
+                      color: "primary",
+                      radius: "full",
+                      variant: "solid",
+                    }) + " px-6 py-3"
+                  }
+                  onClick={() => {
+                    const element = document.getElementById("services");
 
-                {/* Main image container */}
-                <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-card/90 shadow-xl backdrop-blur-sm">
-                  <figure className="relative aspect-[4/5]">
-                    <Image
-                      fill
-                      // Keep high priority but reduce decode cost
-                      priority
-                      fetchPriority="high"
-                      alt="Kendrickson headshot"
-                      className="object-cover object-top transition-transform duration-700"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
-                      quality={70}
-                      src="/hero-kristi.jpg"
-                    />
-                    {/* Professional overlay */}
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
-                  </figure>
-                </div>
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
+                >
+                  Our Services
+                </Button>
+                <Button
+                  aria-label="Contact us"
+                  className={
+                    buttonStyles({
+                      color: "secondary",
+                      radius: "full",
+                      variant: "bordered",
+                    }) + " px-6 py-3"
+                  }
+                  onClick={() => {
+                    const element = document.getElementById("contact");
 
-                {/* Professional badge */}
-                <div className="absolute -bottom-3 -right-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1 shadow-lg">
-                  <div className="rounded-full bg-background px-3 py-1 text-xs font-medium text-foreground">
-                    Kristi Kendrickson
+                    if (element) {
+                      element.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                      });
+                    }
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </div>
+            </SlideUp>
+            <FadeIn delay={0.2} className="lg:col-span-5 xl:col-span-6">
+              <div className="mx-auto w-full max-w-md lg:mx-0 lg:ml-auto">
+                <div className="relative group">
+                  {/* Subtle glow effect */}
+                  <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-pink-500/30 via-purple-500/20 to-blue-500/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+                  {/* Main image container */}
+                  <div className="relative overflow-hidden rounded-2xl border border-border/40 bg-card/90 shadow-[0_0_50px_-5px_rgba(236,72,153,0.4)] backdrop-blur-sm">
+                    <figure className="relative aspect-[4/5]">
+                      <Image
+                        fill
+                        // Keep high priority but reduce decode cost
+                        priority
+                        fetchPriority="high"
+                        alt="Kendrickson headshot"
+                        className="object-cover object-top transition-transform duration-700"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
+                        quality={70}
+                        src="/hero-kristi.jpg"
+                      />
+                      {/* Professional overlay */}
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/15 via-transparent to-transparent" />
+                    </figure>
+                  </div>
+
+                  {/* Professional badge */}
+                  <div className="absolute -bottom-3 -right-3 rounded-full bg-gradient-to-r from-pink-500 to-purple-500 p-1 shadow-lg">
+                    <div className="rounded-full bg-background px-3 py-1 text-xs font-medium text-foreground">
+                      Kristi Kendrickson
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
-      </div>
+      </section>
+
       <section className="mt-20 pt-12 lg:mt-28" id="about">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
           <div className="grid items-start gap-10 lg:grid-cols-12 lg:gap-12">
             {/* Content - appears first on mobile, second on desktop */}
-            <div className="order-1 lg:order-2 lg:col-span-7 xl:col-span-6 text-center lg:text-left">
+            <SlideUp className="order-1 lg:order-2 lg:col-span-7 xl:col-span-6 text-center lg:text-left">
               <div className="mb-3 inline-flex items-center rounded-full bg-gradient-to-r from-[#FF72E1]/15 to-[#F54C7A]/15 px-2.5 py-1 text-xs font-medium tracking-wide text-muted-foreground ring-1 ring-[#FF72E1]/30">
                 About Us
               </div>
@@ -371,20 +370,24 @@ export default function Home() {
                   Technology-enabled
                 </div>
               </div>
-            </div>
+            </SlideUp>
 
             {/* Image carousel - appears second on mobile, first on desktop */}
-            <div className="order-2 lg:order-1 lg:col-span-5 xl:col-span-6">
+            <FadeIn
+              delay={0.2}
+              className="order-2 lg:order-1 lg:col-span-5 xl:col-span-6"
+            >
               <div className="mx-auto max-w-lg lg:max-w-none">
                 <ImageCarousel />
               </div>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
+
       <section className="mt-16 border-border/60 pt-12 lg:mt-24" id="services">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="relative mb-8 sm:mb-12 text-center">
+          <SlideUp className="relative mb-8 sm:mb-12 text-center">
             <div className="mb-3 flex justify-center">
               <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#FF72E1]/15 to-[#F54C7A]/15 px-2.5 py-1 text-xs font-medium tracking-wide text-muted-foreground ring-1 ring-[#FF72E1]/30">
                 What we do
@@ -399,17 +402,20 @@ export default function Home() {
               educational instituations thrive.
             </p>
             <div className="mx-auto mt-5 h-1 w-24 rounded-full bg-gradient-to-r from-[#FF72E1] to-[#F54C7A]" />
-          </div>
+          </SlideUp>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {services.map((service) => (
-              <InteractiveServiceCard key={service.id} service={service} />
+            {services.map((service, index) => (
+              <FadeIn key={service.id} delay={index * 0.1}>
+                <InteractiveServiceCard service={service} />
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
+
       <section className="mt-20 pt-12 lg:mt-28" id="team">
         <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
-          <div className="mb-8 text-center sm:mb-12">
+          <SlideUp className="mb-8 text-center sm:mb-12">
             <div className="mb-3 flex justify-center">
               <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#FF72E1]/15 to-[#F54C7A]/15 px-2.5 py-1 text-xs font-medium tracking-wide text-muted-foreground ring-1 ring-[#FF72E1]/30">
                 Our Team
@@ -425,57 +431,70 @@ export default function Home() {
               Our leadership team brings decades of experience in public
               education to serve your institution.
             </p>
-          </div>
+          </SlideUp>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 sm:gap-8">
-            <InteractiveTeamCard
-              bio="With over 30 years of experience in public education in Texas, including more than 15 years as a public school administrator, Kristi brings unparalleled expertise to every consultation."
-              email="kristi.kendrickson@kenedu.net"
-              imageUrl="/hero-kristi.jpg"
-              name="Kristi Kendrickson"
-              position="CEO & Founder"
-            />
-            <InteractiveTeamCard
-              bio="As a public school professional in Texas, Kinsey brings valuable insights into the financial and operational aspects of educational institutions, ensuring our solutions are both effective and practical."
-              email="kinsey.mickelson@kenedu.net"
-              imagePositionClassName="object-[50%_30%]"
-              imageUrl="/kinsey.PNG"
-              name="Kinsey Mickelson"
-              position="CFO"
-            />
-            <InteractiveTeamCard
-              bio="With over 20 years of experience in educational counseling, Anissa brings unmatched expertise in guiding students, families, and educators through the complexities of academic and personal development. As a Licensed Professional Counselor (LPC), she combines compassion with professionalism, ensuring that every individual she works with feels supported, valued, and empowered to succeed."
-              email="anissa.geeslin@kenedu.net"
-              imageUrl="/anissa.jpg"
-              name="Anissa Geeslin"
-              position="Director of Counseling Services and Admin Liaison"
-            />
-            <InteractiveTeamCard
-              bio="Becky has more than 20 years of experience in education and administration, where she has earned a reputation for her organization, efficiency, and ability to keep teams running smoothly. Known as the steady hand behind the scenes, Becky ensures that operations remain seamless, deadlines are met, and every detail is managed with care."
-              email="becky.bourland@kenedu.net"
-              imageUrl="/becky.jpeg"
-              name="Becky Bourland"
-              position="Executive Administrative Assistant"
-            />
-            <InteractiveTeamCard
-              bio="Jacob leads the technology systems that keep the organization running securely and efficiently. As IT Director, he manages infrastructure, provides technical solutions, and ensures that both staff and clients have the tools they need to succeed in a digital world. His expertise and dedication make him the go-to resource for all technology needs."
-              email="jacob.mickelson@kenedu.net"
-              imageUrl="/jacob.jpeg"
-              name="Jacob Mickelson"
-              position="Director of Information Technology"
-            />
-            <InteractiveTeamCard
-              bio="Trevor specializes in creating and maintaining professional websites that reflect the vision and goals of the organization. With a focus on user-friendly design and functionality, he develops web platforms that not only look great but also perform seamlessly. His technical skills and creative approach bring digital projects to life."
-              email="trevor.mickelson@kenedu.net"
-              imageUrl="/trevor.png"
-              name="Trevor Mickelson"
-              position="Web Development & Design Specialist"
-            />
+            <FadeIn delay={0.1}>
+              <InteractiveTeamCard
+                bio="With over 30 years of experience in public education in Texas, including more than 15 years as a public school administrator, Kristi brings unparalleled expertise to every consultation."
+                email="kristi.kendrickson@kenedu.net"
+                imageUrl="/hero-kristi.jpg"
+                name="Kristi Kendrickson"
+                position="CEO & Founder"
+              />
+            </FadeIn>
+            <FadeIn delay={0.2}>
+              <InteractiveTeamCard
+                bio="As a public school professional in Texas, Kinsey brings valuable insights into the financial and operational aspects of educational institutions, ensuring our solutions are both effective and practical."
+                email="kinsey.mickelson@kenedu.net"
+                imagePositionClassName="object-[50%_30%]"
+                imageUrl="/kinsey.PNG"
+                name="Kinsey Mickelson"
+                position="CFO"
+              />
+            </FadeIn>
+            <FadeIn delay={0.3}>
+              <InteractiveTeamCard
+                bio="With over 20 years of experience in educational counseling, Anissa brings unmatched expertise in guiding students, families, and educators through the complexities of academic and personal development. As a Licensed Professional Counselor (LPC), she combines compassion with professionalism, ensuring that every individual she works with feels supported, valued, and empowered to succeed."
+                email="anissa.geeslin@kenedu.net"
+                imageUrl="/anissa.jpg"
+                name="Anissa Geeslin"
+                position="Director of Counseling Services and Admin Liaison"
+              />
+            </FadeIn>
+            <FadeIn delay={0.4}>
+              <InteractiveTeamCard
+                bio="Becky has more than 20 years of experience in education and administration, where she has earned a reputation for her organization, efficiency, and ability to keep teams running smoothly. Known as the steady hand behind the scenes, Becky ensures that operations remain seamless, deadlines are met, and every detail is managed with care."
+                email="becky.bourland@kenedu.net"
+                imageUrl="/becky.jpeg"
+                name="Becky Bourland"
+                position="Executive Administrative Assistant"
+              />
+            </FadeIn>
+            <FadeIn delay={0.5}>
+              <InteractiveTeamCard
+                bio="Jacob leads the technology systems that keep the organization running securely and efficiently. As IT Director, he manages infrastructure, provides technical solutions, and ensures that both staff and clients have the tools they need to succeed in a digital world. His expertise and dedication make him the go-to resource for all technology needs."
+                email="jacob.mickelson@kenedu.net"
+                imageUrl="/jacob.jpeg"
+                name="Jacob Mickelson"
+                position="Director of Information Technology"
+              />
+            </FadeIn>
+            <FadeIn delay={0.6}>
+              <InteractiveTeamCard
+                bio="Trevor specializes in creating and maintaining professional websites that reflect the vision and goals of the organization. With a focus on user-friendly design and functionality, he develops web platforms that not only look great but also perform seamlessly. His technical skills and creative approach bring digital projects to life."
+                email="trevor.mickelson@kenedu.net"
+                imageUrl="/trevor.png"
+                name="Trevor Mickelson"
+                position="Web Development & Design Specialist"
+              />
+            </FadeIn>
           </div>
         </div>
       </section>
+
       <section className="mt-20 pt-12 lg:mt-28" id="contact">
         <div className="mx-auto w-full max-w-6xl px-4 sm:px-6">
-          <div className="mb-8 text-center sm:mb-12">
+          <SlideUp className="mb-8 text-center sm:mb-12">
             <div className="mb-3 flex justify-center">
               <span className="inline-flex items-center rounded-full bg-gradient-to-r from-[#FF72E1]/15 to-[#F54C7A]/15 px-2.5 py-1 text-xs font-medium tracking-wide text-muted-foreground ring-1 ring-[#FF72E1]/30">
                 Get in touch
@@ -491,8 +510,11 @@ export default function Home() {
               Ready to transform your educational institution? Contact us today
               to schedule a consultation.
             </p>
-          </div>
-          <div className="relative overflow-hidden rounded-2xl border border-border/60 bg-card/70 shadow-sm backdrop-blur-sm">
+          </SlideUp>
+          <FadeIn
+            delay={0.2}
+            className="mx-auto max-w-xl relative overflow-hidden rounded-2xl border border-border/60 bg-card/70 shadow-[0_0_50px_-5px_rgba(236,72,153,0.4)] backdrop-blur-sm"
+          >
             <div
               aria-hidden
               className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-[linear-gradient(to_bottom,hsl(var(--background)/0.85),transparent)]"
@@ -601,9 +623,9 @@ export default function Home() {
                 </Button>
               </div>
             </form>
-          </div>
+          </FadeIn>
         </div>
       </section>
-    </section>
+    </div>
   );
 }

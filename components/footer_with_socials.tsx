@@ -7,96 +7,68 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex flex-col items-center gap-8 py-10">
-          <div className="text-center">
-            <Image
-              priority
-              alt="Kendrickson Education Consulting"
-              className="mx-auto h-auto w-auto max-w-[200px]"
-              height={60}
-              src="/KendricksonEdConsultCMYK.png"
-              width={200}
-            />
-          </div>
-
-          <nav className="flex flex-wrap items-center justify-center gap-6">
+    <footer className="mt-24 border-t border-border/40 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">
+        <div className="flex justify-center md:order-2">
+          <nav className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
             <Link
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/50 rounded"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-pink-500"
               href="#about"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById("about");
-
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }
+                document
+                  .getElementById("about")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              About Us
+              About
             </Link>
             <Link
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/50 rounded"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-pink-500"
               href="#services"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById("services");
-
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }
+                document
+                  .getElementById("services")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Services
             </Link>
             <Link
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/50 rounded"
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-pink-500"
               href="#team"
               onClick={(e) => {
                 e.preventDefault();
-                const element = document.getElementById("team");
-
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }
+                document
+                  .getElementById("team")
+                  ?.scrollIntoView({ behavior: "smooth" });
               }}
             >
               Team
             </Link>
-            <Link
-              className="text-sm text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pink-500/50 rounded"
-              href="#contact"
-              onClick={(e) => {
-                e.preventDefault();
-                const element = document.getElementById("contact");
-
-                if (element) {
-                  element.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                  });
-                }
-              }}
+            <a
+              className="text-sm font-medium text-muted-foreground transition-colors hover:text-pink-500"
+              href="mailto:kristi.kendrickson@kenedu.net"
             >
-              Contact Us
-            </Link>
+              Contact
+            </a>
           </nav>
         </div>
-
-        <div className="py-6 text-center">
-          <p className="text-xs text-muted-foreground">
-            © {year} Kendrickson. All rights reserved.
-          </p>
+        <div className="mt-8 md:order-1 md:mt-0">
+          <div className="flex flex-col items-center md:items-start gap-4">
+            <Image
+              alt="Kendrickson Education Consulting"
+              className="h-8 w-auto opacity-90"
+              height={32}
+              src="/KendricksonEdConsultCMYK.png"
+              width={160}
+            />
+            <p className="text-center text-xs leading-5 text-muted-foreground md:text-left">
+              &copy; {year} Kendrickson Educational Consulting, LLC. All rights
+              reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

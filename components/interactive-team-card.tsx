@@ -67,7 +67,7 @@ export const InteractiveTeamCard = ({
   };
 
   return (
-    <div className="h-full overflow-hidden rounded-2xl border border-border/60 bg-card/90 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:border-pink-500/60 group backdrop-blur-sm relative flex flex-col">
+    <div className="h-full overflow-hidden rounded-2xl border border-border/60 bg-card/90 shadow-[0_0_15px_-3px_rgba(236,72,153,0.1)] transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_0_30px_-5px_rgba(236,72,153,0.3)] hover:border-pink-500/60 group backdrop-blur-sm relative flex flex-col">
       {/* Image section - larger */}
       <div className="relative h-64 sm:h-72 lg:h-72 overflow-hidden">
         {imageUrl ? (

@@ -61,7 +61,7 @@ export const InteractiveServiceCard = ({
     <>
       <div
         aria-label={`Learn more about ${service.title}`}
-        className="w-full max-w-[360px] mx-auto rounded-xl border border-border/60 bg-card shadow-sm transition-all duration-200 hover:shadow-md hover:border-pink-500/60 cursor-pointer group"
+        className="w-full max-w-[360px] mx-auto rounded-xl border border-border/60 bg-card shadow-[0_0_20px_-3px_rgba(236,72,153,0.2)] transition-all duration-200 hover:shadow-[0_0_35px_-5px_rgba(236,72,153,0.4)] hover:border-pink-500/60 cursor-pointer group"
         role="button"
         tabIndex={0}
         onClick={handleOpen}

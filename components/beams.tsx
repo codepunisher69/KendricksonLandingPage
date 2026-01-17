@@ -66,6 +66,12 @@ export const BackgroundBeams = React.memo(
           className,
         )}
       >
+        {/* Refined "Lovable" Style Glow - INTENSIFIED */}
+        <div className="absolute left-[10%] top-[-5%] -z-10 h-[600px] w-[600px] rounded-full bg-indigo-500/40 blur-[100px]" />
+        <div className="absolute right-[10%] top-[-5%] -z-10 h-[600px] w-[600px] rounded-full bg-[#ec4899]/50 blur-[100px]" />
+        <div className="absolute top-[20%] left-[50%] -translate-x-1/2 -z-10 h-[400px] w-[800px] rounded-full bg-[#ec4899]/20 blur-[120px]" />
+        <div className="absolute bottom-[0%] left-[20%] -z-10 h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[100px]" />
+
         <svg
           className="pointer-events-none absolute z-0 h-full w-full"
           fill="none"

@@ -32,9 +32,10 @@ export const Navbar = () => {
   return (
     <HeroUINavbar
       isBordered
-      className="backdrop-blur bg-background/70 supports-[backdrop-filter]:bg-background/60 relative z-50"
+      className="backdrop-blur-md bg-background/70 supports-[backdrop-filter]:bg-background/60 fixed top-0 w-full z-[100]"
       isMenuOpen={isMenuOpen}
       maxWidth="xl"
+      position="sticky"
       onMenuOpenChange={setIsMenuOpen}
     >
       {/* Left: brand + toggle */}
