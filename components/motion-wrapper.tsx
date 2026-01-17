@@ -14,13 +14,13 @@ export const FadeIn = ({
   children,
   delay = 0,
   className = "",
-  viewport = { once: true, margin: "-50px" },
+  viewport = { once: true, margin: "0px 0px -50px 0px" },
 }: MotionWrapperProps) => {
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 30 }}
-      transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      initial={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
       viewport={viewport}
       whileInView={{ opacity: 1, y: 0 }}
     >
@@ -37,9 +37,9 @@ export const SlideUp = ({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y: 50 }}
-      transition={{ duration: 0.8, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
-      viewport={{ once: true, margin: "-50px" }}
+      initial={{ opacity: 0, y: 30 }}
+      transition={{ duration: 0.6, delay, ease: "easeOut" }}
+      viewport={{ once: true, margin: "0px 0px -50px 0px" }}
       whileInView={{ opacity: 1, y: 0 }}
     >
       {children}
