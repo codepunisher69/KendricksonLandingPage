@@ -10,7 +10,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer_with_socials";
-import { BackgroundBeams } from "@/components/beams";
+import { BackgroundBeamsWrapper } from "@/components/beams-wrapper";
 import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
@@ -39,7 +39,7 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <BackgroundBeams />
+        <BackgroundBeamsWrapper />
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="min-h-dvh flex flex-col">
             <Navbar />

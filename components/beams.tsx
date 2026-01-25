@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react";
+import { motion } from "framer-motion";
 
 import { cn } from "@/lib/utils";
 
@@ -87,7 +87,7 @@ export const BackgroundBeams = React.memo(
             strokeWidth="0.5"
           />
 
-          {paths.map((path, index) => (
+          {paths.slice(0, 20).map((path, index) => (
             <motion.path
               key={`path-` + index}
               d={path}
@@ -97,6 +97,20 @@ export const BackgroundBeams = React.memo(
             />
           ))}
           <defs>
+            {paths.slice(0, 20).map((_, index) => (
+              <linearGradient
+                key={`gradient-${index}`}
+                id={`linearGradient-${index}`}
+                x1="0%"
+                y1="0%"
+                x2="100%"
+                y2="0%"
+              >
+                <stop offset="0%" stopColor="#ec4899" stopOpacity="0" />
+                <stop offset="50%" stopColor="#ec4899" stopOpacity="0.5" />
+                <stop offset="100%" stopColor="#ec4899" stopOpacity="0" />
+              </linearGradient>
+            ))}
             <radialGradient
               cx="0"
               cy="0"
